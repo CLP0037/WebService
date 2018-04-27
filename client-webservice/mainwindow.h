@@ -1,7 +1,9 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+
+#include <qtsoap.h>
 
 class Client;
 
@@ -18,9 +20,18 @@ public:
 public slots:
     void receiveResponse(QString response);
 
+    void onResponse(const QtSoapMessage &response);
+
 private slots:
     void on_checkLogin_clicked();
     void on_createUser_clicked();
+
+
+    void on_QQ_OnlineCheck_clicked();
+
+    void on_Phone_AddrCheck_clicked();
+
+    void on_Phone_EmailCheck_clicked();
 
 protected:
     void changeEvent(QEvent *e);
